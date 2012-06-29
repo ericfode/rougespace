@@ -1,0 +1,6 @@
+(defclass thing (drawable)
+  ((name :accessor thing-name
+	:initform "tree"
+	:initarg :name)
+   (symbol :initform 74)))
+

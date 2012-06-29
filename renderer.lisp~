@@ -1,0 +1,21 @@
+(require 'rougespace)
+(in-package #:rougespace)
+
+;46 =
+;64 =@
+;74 =t
+
+(defun draw-some (xs ys h w objects)
+  (drawTerrain xs ys h w)
+  (drawObjects xs ys h w objects))
+
+(defun draw-terrain (xs ys h w)
+  (loop for x from 0 to h do 
+       (loop for y from 0 to w do
+	    (setf char (aref *world* (+ x xs) (+ y ys)))
+	    (tcod:console-put-char tcod:*root* x y char :none))))
+
+(defun draw-objects (xs ys h w objects)
+  (loop for d in objects do
+     (when (inrange xs ys h w (draw-pos d))
+       (draw d xs ys))))

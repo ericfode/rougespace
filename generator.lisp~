@@ -1,0 +1,20 @@
+(in-package #:rougespace)
+
+;fills world with what ever the default thing is
+(defmethod world-build ((w world) size-x size-y)
+  (setf (world-array w) (make-array '(size-x size-y)))
+  (loop for x from 0 to (- size-x 1) do
+       (loop for y from 0 to (- size-y 1) do
+	       (setf (aref (world-array w) x y) 
+		     (eval (world-default-thing-gen w))))))
+
+
+(defmethod world-spawn-objects-random ((w world) count)
+	(loop for x from 0 to count do
+	     (setf (aref (world-array w) 
+			 (random (world-size-x w)) 
+			 (random (world-size-y w)))
+		   (make-instance 'thing 
+				  :thing-name "tree" 
+				  :draw-symbol 50))))
+

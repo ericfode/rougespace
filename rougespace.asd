@@ -1,3 +1,12 @@
 (asdf:defsystem #:rougespace
   :depends-on (#:tcod)
-  :components ((:file "rougespace")))
+  :components ((:file "util")
+	       (:file "rougespace")
+	       (:file "drawable")
+	       (:file "thing")
+	       (:file "camera")
+	       (:file "world")
+	       (:file "generator")
+	       (:file "renderer")
+	       (:file "object")
+	       (:file "player")))
