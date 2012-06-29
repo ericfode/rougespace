@@ -1,6 +1,0 @@
-(in-package 'rougespace)
-
-(defclass object ()
-  ((can-share :accessor object-can-share
-	      :initfrom nil
-	      :initarg :can-share)))

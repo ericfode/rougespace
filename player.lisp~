@@ -1,2 +1,0 @@
-(defclass player (drawable)
-  ((symbol :initform 64)))
