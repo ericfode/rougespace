@@ -14,10 +14,3 @@
   (y :accessor pos-y
      :initform 0
      :initarg :y)))
-
-(defmethod draw  ((d Thing) x y)
-	   (tcod:console-put-char tcod:*root* 
-				  x
-				  y
-				  (draw-symbol d)
-				  :none))

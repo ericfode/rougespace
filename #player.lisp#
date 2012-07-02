@@ -11,7 +11,7 @@
 	:initarg :pos)))
 
 (defmethod player-move ((p Player) dx dy)
-  (if (and (world-edge-check (player-in-world p)
+  (if (and(world-edge-check (player-in-world p)
 			     (+ (pos-x (player-pos p)) dx)
 			     (+ (pos-y (player-pos p)) dy))
        (can-share (aref (world-array (player-in-world p)) 	
